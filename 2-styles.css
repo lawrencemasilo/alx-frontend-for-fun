@@ -1,0 +1,60 @@
+.toggle input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-label {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.toggle-label::after {
+    content: 'Yes';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e1003c;
+    width: 40px;
+
+}
+
+.toggle-inner {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    /*background-color: #fff;*/
+    background-color: transparent;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch {
+    position: absolute;
+    top: 3px;
+    left: 33px;
+    width: 24px;
+    height: 24px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-label::after {
+    content: 'No';
+    background-color: #bebebe;
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-label .toggle-switch {
+    left: 3px;
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-label .toggle-inner {
+    transform: translateX(30px);
+}
