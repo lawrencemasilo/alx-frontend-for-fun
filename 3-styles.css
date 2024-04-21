@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-item {
+    display: none;
+}
+
+.menu-open {
+    display: none;
+}
+
+.menu-open:checked ~ .menu-item {
+    display: block;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #f5f5f5;
+    padding: 10px;
+    background-color: #e1003c;
+}
+
+.menu-item:hover {
+    background-color: #e1003c;
+}
+
+/* Menu button styles */
+.menu-open-button {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-line {
+    background-color: #e1003c;
+    display: block;
+    height: 3px;
+    width: 25px;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.menu-line-1 {
+    top: 10px;
+}
+
+.menu-line-2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-line-3 {
+    bottom: 10px;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-1 {
+    transform: translateY(17px) rotate(45deg);
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-2 {
+    opacity: 0;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-3 {
+    transform: translateY(-17px) rotate(-45deg);
+}
